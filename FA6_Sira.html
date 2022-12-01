@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>My First Webpage </title>
+		<meta charset="UTF-8">
+		<meta name="author" content="My Name">
+		<meta name="keywords" content="HTML, CSS, JavaScript">
+		<meta name="revised" content="05-09-2022">
+		<link rel="icon" href="icon.png" type="image/gif">
+
+		<style>
+				a.link1:link {
+				background-color: yellow;
+				font-size: 30px;
+				margin: 10px;
+					text-decoration: none;
+					border: dotted blue 1px;
+					padding: 10px;
+					}
+					a.link1:visited {
+					background-color: blue;
+					color: white;
+					}
+					a.link1:hover {
+					background-color: pink;
+					color: gray;
+					}
+					a.link1:active {
+					background-color: violet;
+					color: yellow;
+					}
+				a.link2:link {
+				background-color: lightblue;
+				font-size: 30px;
+				margin: 10px;
+					text-decoration: none;
+					border: dotted blue 1px;
+					padding: 10px;
+					}
+					a.link2:visited {
+					background-color: lightgreen;
+					color: darkblue;
+					}
+					a.link2:hover {
+					background-color: lightgray;
+					color: maroon;
+					}
+					a.link2:active {
+					background-color: orange;
+					color: hotpink;
+					}
+				.Car div{
+					border: solid black 1px;
+					width: 150px;
+					height: 150px;
+					margin-top: 50px;
+					}
+				div:target#div1{
+					display: block;
+					border: solid black 1px;
+					background-color: maroon;
+					color: yellow;
+					}
+				div:target#div2{
+					display: block;
+					border: dotted green 10px;
+					background-color: #079799;
+					color: yellow;
+					}
+		</style>
+		<style>
+			body {
+			padding: 20px;
+			}
+		</style>
+	</head>
+		<body>
+			<div class="Car">
+			
+			<a class="link1" href="#div1" target="_blank">
+							First Link
+			</a>
+			<a class="link2" href="#div2" target="_blank">
+							Second Link
+			</a>
+			
+			<div id="div1">
+				<h2>div 1 here</h2>
+			</div>
+			<div id="div2">
+				<h2>div 2 here</h2>
+			</div>
+		</body> 
+</html>
