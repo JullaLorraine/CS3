@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		
+		<style>
+			*{
+			text-align: center;
+		}
+		width: 1000px;
+		height: 1000px;
+		}
+		</style>
+		
+	</head>
+	<body>
+	
+		<img id="pics" src="images/anya.jpg">
+		<button onclick="Image1()"> IMAGE 1 </button>
+		<button onclick="Image2()"> IMAGE 2 </button>
+		
+		<script>
+			function Image1() {
+				document.getElementById("pics").src = "images/anya1.jpg";
+			}
+			function Image2() {
+				document.getElementById("pics").src = "images/anya.jpg";
+			}
+		</script>
+		
+	</body>
+</html>
