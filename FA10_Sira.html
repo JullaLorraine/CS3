@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Formative Assessment 10</title>
+	</head>
+	
+	<body onload="random()">
+	
+		<center>
+			<div>
+				<p id = "inputNumber"></p>
+				<p id = "split"></p>
+			</div>
+		</center>
+		
+		<script>
+		var x;
+		var y;
+		
+			function random(){
+				x = Math.floor(Math.random()*1001);
+				y = String(x).split('');
+				document.getElementById("inputNumber").innerHTML = "Randomly generated number: " + x;
+				document.getElementById("split").innerHTML = "split:  " + y.slice(-3, -2)*100 + ",  " + y.slice(-2, -1)*10 + ",  " + y.slice(-1);
+				
+			}
+		
+		</script>
+		
+	</body>
+</html>
