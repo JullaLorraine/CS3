@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> My Online Shop</title>
+	<meta charset="UTF-8"> 
+	<meta name="keywords" content="HTML, CSS, JavaScript"> 
+	<link rel="icon" href="icon.png" type="image/gif"> 
+	<style>
+      span {color: blue; text-decoration:underline}
+      button {width: 100px; padding: 5px; background: pink;}
+	</style>
+
+	</head>
+<body>
+	<h1>Welcome to Julla's Coffee Heaven</h1>
+	<h2> Please select from the following items </h2>
+	<ol>
+		<li>  Cafe Latte        -- price: Php 120.00 </li>
+		<li>  Iced Americano    -- price: Php 200.00 </li>
+		<li>  Caramel Macchiato -- price: Php 300.00 </li>
+	</ol>
+    <p> Item selected : <span id="item"> </span> </p>
+	<p> Qty bought : <span id="qty"> </span> </p>
+	<p> Amount to pay for the item: <span id="bill"> </span> </p>
+	<p> Current Total Bill:  <span id="tbill"> </span> </p>
+	<button onclick="buyItem()">Buy an Item</button>
+	<button onclick="clearCashe()"> Clear </button>
+    
+    <script>
+	
+	var finalbill = 0;
+	var totalBalance = 0;
+		
+		function buyItem() {
+			var order  = prompt("Welcome! What item in the menu would you like to buy?");  //asks user what item from the menu the user wants to buy
+			
+			<!-- Detects if order is not on the menu -->
+			if (order < 1 || order > 3 || isNaN(order)){
+				return alert("Order not on the menu");
+			}
+
+			var quantity = prompt("How many of item " + order + " would you like to buy?"); //asks for the quantity of the order
+			
+			<!-- Detects if order quantity is not a number-->
+			if (isNaN(quantity)){
+				return alert("Order Error! Please enter a proper quantity"); 
+			}
+			
+					if(order == 1) { //if user orders item 1 from the menu
+
+						finalbill += 120*quantity; //multiplies quantity with price
+						totalBalance = 120*quantity; //diplays the total balance of the user
+				
+						document.getElementById("item").innerHTML = "1";
+						document.getElementById("qty").innerHTML = quantity;
+						document.getElementById("bill").innerHTML = totalBalance;
+						document.getElementById("tbill").innerHTML = finalbill;
+						
+					}
+				
+				
+					if(order == 2) { //if user orders item 2 from the menu
+				
+						finalbill += 200*quantity;
+						totalBalance = 200*quantity;
+					
+						document.getElementById("item").innerHTML = "2";
+						document.getElementById("qty").innerHTML = quantity;				
+						document.getElementById("bill").innerHTML = totalBalance;
+						document.getElementById("tbill").innerHTML = finalbill;
+				
+					}
+			
+			
+					if(order == 3) { //if user orders item 3 from the menu
+				
+						finalbill += 300*quantity;
+						totalBalance = 300*quantity;
+				
+						document.getElementById("item").innerHTML = "2";
+						document.getElementById("qty").innerHTML = quantity;				
+						document.getElementById("bill").innerHTML = totalBalance;
+						document.getElementById("tbill").innerHTML = finalbill;
+				
+					}
+			
+		
+				}
+				function clearCashe(){ // clears the data from the previous order
+					finalbill = 0;
+					document.getElementById("item").innerHTML = "";
+					document.getElementById("qty").innerHTML = "";				
+					document.getElementById("bill").innerHTML = "";
+					document.getElementById("tbill").innerHTML = "";
+		
+	
+			}
+    
+    </script>
+</body>
+
+</html>
