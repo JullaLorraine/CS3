@@ -1,0 +1,1108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	<meta charset="UTF-8">
+	<meta name="keywords" content="HTML, CSS, JavaScript">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="icon" href="icon.png" type="image/gif">
+	<style>
+		.qu{
+			border-radius: 25px;
+			margin-left: 270px;
+			border-width: 10px;
+			border: 5px solid black;
+		}
+		#fill{
+			background-color: #E8F6EF;
+			border: 1px solid #E8F6EF;
+			border-radius: 25px;
+			width: 650px;
+			margin-left: 270px;
+			padding: 20px;
+			font-family: 'comic sans ms';
+			width: 660px;
+		}
+		#ck{
+			margin-left: 570px;
+		}
+		body{
+			background-color: #4C4C6D;
+		}
+		.gu{
+			margin-left: 20px;
+		}
+		.options-container {
+			display: flex;
+			flex-direction: column;
+			align-items: justify;
+		}
+		.quiz {
+			width: 700px;
+			margin-left: 270px;
+			margin-bottom: 30px;
+			margin-top: 20px;
+			border: none;
+			border-radius: 5px;
+		}
+		label {
+			display: block;
+			width: 100%;
+			padding: 15px 20px;
+			font-size: 16px;
+			font-weight: bold;
+			border: 2px solid #ccc;
+			border-radius: 5px;
+			cursor: pointer;
+			background-color: #FFE194;
+		}
+		.sb{
+			padding: 10px;
+		}
+		.option {
+			margin-bottom: 10px;
+			width: 660px;
+		}
+		input[type="radio"] {
+			display: none;
+		}
+		input[type="radio"]:checked + label {
+			background-color: #ccc;
+		}
+
+		.submit-container {
+  			display: flex;
+  			justify-content: center;
+  			margin-top: 20px;
+		}
+
+		#submit {
+  			padding: 10px 20px;
+  			font-size: 16px;
+  			background-color: lightblue;
+  			border: none;
+  			border-radius: 5px;
+  			cursor: pointer;
+  			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+			width: 200px;
+		}
+		#score-container {
+			margin-left: 270px;
+			margin-top: 20px;
+			color: white;
+			font-size: 50px;
+		}
+
+		.result {
+			margin-left: 270px;
+			margin-top: 10px;
+			color: white;
+			font-size: 20px;
+		}
+
+		#result-container {
+			margin-left: 270px;
+			margin-top: 20px;
+			color: white;
+			font-size: 20px;
+		}
+
+		
+		.next-container {
+  			display: flex;
+  			justify-content: center;
+  			margin-top: 20px;
+		}
+
+		#next-button {
+			display:none;
+  			padding: 10px 20px;
+  			font-size: 16px;
+  			background-color: lightgray;
+  			color: black;
+  			border: none;
+  			border-radius: 5px;
+  			cursor: pointer;
+  			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  			transition: background-color 0.3s ease;
+			width: 200px;
+		}
+
+		#next-button:hover {
+  			background-color: darkgray;
+		}
+
+		.reset-container {
+  			display: flex;
+  			justify-content: center;
+  			margin-top: 20px;
+		}
+
+		#reset-button {
+			display:none;
+  			padding: 10px 20px;
+  			font-size: 16px;
+  			background-color: lightgray;
+  			color: black;
+  			border: none;
+  			border-radius: 5px;
+  			cursor: pointer;
+  			box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  			transition: background-color 0.3s ease;
+			width: 200px;
+		}
+
+		#reset-button:hover {
+  			background-color: darkgray;
+		}
+	</style>
+</head>
+
+<body>
+
+	<img class="gu" src="Q/gu.png">
+	<div id="score-container"></div>
+	<img class="qu" src="Q/1.png" style="border-color: black;">
+	<form id="q1" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q1s1" name="Q1" value="A.">
+				<label for="q1s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q1s2" name="Q1" value="B.">
+				<label for="q1s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q1s3" name="Q1" value="C.">
+				<label for="q1s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q1s4" name="Q1" value="D.">
+				<label for="q1s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q1" class="result"></div>
+	</form>
+	<img class="qu" src="Q/2.png" style="border-color: black;">
+	<form id="q2" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q2s1" name="Q2" value="A.">
+				<label for="q2s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q2s2" name="Q2" value="B.">
+				<label for="q2s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q2s3" name="Q2" value="C.">
+				<label for="q2s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q2s4" name="Q2" value="D.">
+				<label for="q2s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q2" class="result"></div>
+	</form>
+	<img class="qu" src="Q/3.png" style="border-color: black;">
+	<form id="q3" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q3s1" name="Q3" value="A.">
+				<label for="q3s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q3s2" name="Q3" value="B.">
+				<label for="q3s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q3s3" name="Q3" value="C.">
+				<label for="q3s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q3s4" name="Q3" value="D.">
+				<label for="q3s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q3" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/4.png" style="border-color: black;">
+	<form id="q4" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q4s1" name="Q4" value="A.">
+				<label for="q4s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q4s2" name="Q4" value="B.">
+				<label for="q4s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q4s3" name="Q4" value="C.">
+				<label for="q4s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q4s4" name="Q4" value="D.">
+				<label for="q4s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q4" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/5.png" style="border-color: black;">
+	<form id="q5" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q5s1" name="Q5" value="A.">
+				<label for="q5s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q5s2" name="Q5" value="B.">
+				<label for="q5s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q5s3" name="Q5" value="C.">
+				<label for="q5s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q5s4" name="Q5" value="D.">
+				<label for="q5s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q5" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/6.png" style="border-color: black;">
+	<form id="q6" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q6s1" name="Q6" value="A.">
+				<label for="q6s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q6s2" name="Q6" value="B.">
+				<label for="q6s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q6s3" name="Q6" value="C.">
+				<label for="q6s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q6s4" name="Q6" value="D.">
+				<label for="q6s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q6" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/7.png" style="border-color: black;">
+	<form id="q7" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q7s1" name="Q7" value="A.">
+				<label for="q7s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q7s2" name="Q7" value="B.">
+				<label for="q7s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q7s3" name="Q7" value="C.">
+				<label for="q7s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q7s4" name="Q7" value="D.">
+				<label for="q7s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q7" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/8.png" style="border-color: black;">
+	<form id="q8" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q8s1" name="Q8" value="A.">
+				<label for="q8s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q8s2" name="Q8" value="B.">
+				<label for="q8s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q8s3" name="Q8" value="C.">
+				<label for="q8s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q8s4" name="Q8" value="D.">
+				<label for="q8s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q8" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/9.png" style="border-color: black;">
+	<form id="q9" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q9s1" name="Q9" value="A.">
+				<label for="q9s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q9s2" name="Q9" value="B.">
+				<label for="q9s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q9s3" name="Q9" value="C.">
+				<label for="q9s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q9s4" name="Q9" value="D.">
+				<label for="q9s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q9" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/10.png" style="border-color: black;">
+	<form id="q10" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q10s1" name="Q10" value="A.">
+				<label for="q10s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q10s2" name="Q10" value="B.">
+				<label for="q10s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q10s3" name="Q10" value="C.">
+				<label for="q10s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q10s4" name="Q10" value="D.">
+				<label for="q10s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q10" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/11.png" style="border-color: black;">
+	<form id="q11" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q11s1" name="Q11" value="A.">
+				<label for="q11s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q11s2" name="Q11" value="B.">
+				<label for="q11s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q11s3" name="Q11" value="C.">
+				<label for="q11s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q11s4" name="Q11" value="D.">
+				<label for="q11s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q11" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/12.png" style="border-color: black;">
+	<form id="q12" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q12s1" name="Q12" value="A.">
+				<label for="q12s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q12s2" name="Q12" value="B.">
+				<label for="q12s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q12s3" name="Q12" value="C.">
+				<label for="q12s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q12s4" name="Q12" value="D.">
+				<label for="q12s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q12" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/13.png" style="border-color: black;">
+	<form id="q13" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q13s1" name="Q13" value="A.">
+				<label for="q13s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q13s2" name="Q13" value="B.">
+				<label for="q13s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q13s3" name="Q13" value="C.">
+				<label for="q13s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q13s4" name="Q13" value="D.">
+				<label for="q13s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q13" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/14.png" style="border-color: black;">
+	<form id="q14" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q14s1" name="Q14" value="A.">
+				<label for="q14s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q14s2" name="Q14" value="B.">
+				<label for="q14s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q14s3" name="Q14" value="C.">
+				<label for="q14s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q14s4" name="Q14" value="D.">
+				<label for="q14s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q14" class="result"></div>
+	</form>
+
+	<img class="qu" src="Q/15.png" style="border-color: black;">
+	<form id="q15" class="quiz">
+		<div class="options-container">
+			<div class="option">
+				<input type="radio" id="q15s1" name="Q15" value="A.">
+				<label for="q15s1">A.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q15s2" name="Q15" value="B.">
+				<label for="q15s2">B.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q15s3" name="Q15" value="C.">
+				<label for="q15s3">C.</label>
+			</div>
+			<div class="option">
+				<input type="radio" id="q15s4" name="Q15" value="D.">
+				<label for="q15s4">D.</label>
+			</div>
+		</div>
+		<div id="result-container-q15" class="result"></div>
+	</form>
+
+	<form id="fill">
+		<h2> Complete the sequence </h2>
+		145,
+		<input type="number" id="sq1" name="sq1">
+		<input type="number" id="sq2" name="sq2">
+		415,
+		<input type="number" id="sq3" name="sq3">
+		595, 685,
+		<input type="number" id="sq4" name="sq4">
+		865,
+		<input type="number" id="sq5" name="sq5">
+		1045
+		<br>
+	</form>
+
+	<div class="submit-container">
+    	 	<button id="submit" onclick="checkAnswers()">Submit</button>
+	</div>
+	
+	<div id="result-container"></div>
+
+	<div class="reset-container">
+    		<button id="reset-button" onclick="resetForm()"> Take Quiz Again! </button>
+  	</div>
+	<div class="next-container">
+    		<button id="next-button" onclick="location.href='answers.html'"> View Solutions </button>
+  	</div>
+
+	<script>
+		function checkAnswers() {
+
+			var score = 0;
+			var unansweredQuestions = [];
+
+			var q1Options = document.getElementsByName('Q1');
+			var q1CorrectOption = 'D.';
+
+			var q1SelectedOption = '';
+			for (var i = 0; i < q1Options.length; i++) {
+				if (q1Options[i].checked) {	
+					q1SelectedOption = q1Options[i].value;
+					break;
+				}
+			}
+
+			var q1Quiz = document.getElementById('q1');
+			var q1Image = document.querySelector("img[src='Q/1.png']");
+
+			var q2Options = document.getElementsByName('Q2');
+			var q2CorrectOption = 'B.';
+
+			var q2SelectedOption = '';
+			for (var j = 0; j < q2Options.length; j++) {
+				if (q2Options[j].checked) {
+					q2SelectedOption = q2Options[j].value;
+					break;
+				}
+			}
+
+			var q2Quiz = document.getElementById('q2');
+			var q2Image = document.querySelector("img[src='Q/2.png']");
+
+			var q3Options = document.getElementsByName('Q3');
+			var q3CorrectOption = 'C.';
+
+			var q3SelectedOption = '';
+			for (var k = 0; k < q3Options.length; k++) {
+				if (q3Options[k].checked) {
+					q3SelectedOption = q3Options[k].value;
+					break;
+				}
+			}
+
+			var q3Quiz = document.getElementById('q3');
+			var q3Image = document.querySelector("img[src='Q/3.png']");
+
+			var q4Options = document.getElementsByName('Q4');
+			var q4CorrectOption = 'A.';
+
+			var q4SelectedOption = '';
+			for (var l = 0; l < q4Options.length; l++) {
+				if (q4Options[l].checked) {
+					q4SelectedOption = q4Options[l].value;
+					break;
+				}
+			}
+
+			var q4Quiz = document.getElementById('q4');
+			var q4Image = document.querySelector("img[src='Q/4.png']");
+
+			var q5Options = document.getElementsByName('Q5');
+			var q5CorrectOption = 'D.';
+
+			var q5SelectedOption = '';
+			for (var m = 0; m < q5Options.length; m++) {
+				if (q5Options[m].checked) {
+					q5SelectedOption = q5Options[m].value;
+					break;
+				}
+			}
+
+			var q5Quiz = document.getElementById('q5');
+			var q5Image = document.querySelector("img[src='Q/5.png']");
+
+			
+			var q6Options = document.getElementsByName('Q6');
+			var q6CorrectOption = 'C.';
+
+			var q6SelectedOption = '';
+			for (var n = 0; n < q6Options.length; n++) {
+				if (q6Options[n].checked) {
+					q6SelectedOption = q6Options[n].value;
+					break;
+				}
+			}
+
+			var q6Quiz = document.getElementById('q6');
+			var q6Image = document.querySelector("img[src='Q/6.png']");
+
+			var q7Options = document.getElementsByName('Q7');
+			var q7CorrectOption = 'B.';
+
+			var q7SelectedOption = '';
+			for (var o = 0; o < q7Options.length; o++) {
+				if (q7Options[o].checked) {
+					q7SelectedOption = q7Options[o].value;
+					break;
+				}
+			}
+
+			var q7Quiz = document.getElementById('q7');
+			var q7Image = document.querySelector("img[src='Q/7.png']");
+
+			var q8Options = document.getElementsByName('Q8');
+			var q8CorrectOption = 'C.';
+
+			var q8SelectedOption = '';
+			for (var p = 0; p < q8Options.length; p++) {
+				if (q8Options[p].checked) {
+					q8SelectedOption = q8Options[p].value;
+					break;
+				}
+			}
+
+			var q8Quiz = document.getElementById('q8');
+			var q8Image = document.querySelector("img[src='Q/8.png']");
+
+			var q9Options = document.getElementsByName('Q9');
+			var q9CorrectOption = 'A.';
+
+			var q9SelectedOption = '';
+			for (var q = 0; q < q9Options.length; q++) {
+				if (q9Options[q].checked) {
+					q9SelectedOption = q9Options[q].value;
+					break;
+				}
+			}
+
+			var q9Quiz = document.getElementById('q9');
+			var q9Image = document.querySelector("img[src='Q/9.png']");
+
+			var q10Options = document.getElementsByName('Q10');
+			var q10CorrectOption = 'C.';
+
+			var q10SelectedOption = '';
+			for (var r = 0; r < q10Options.length; r++) {
+				if (q10Options[r].checked) {
+					q10SelectedOption = q10Options[r].value;
+					break;
+				}
+			}
+
+			var q10Quiz = document.getElementById('q10');
+			var q10Image = document.querySelector("img[src='Q/10.png']");
+			
+			var q11Options = document.getElementsByName('Q11');
+			var q11CorrectOption = 'C.';
+
+			var q11SelectedOption = '';
+			for (var s = 0; s < q11Options.length; s++) {
+				if (q11Options[s].checked) {
+					q11SelectedOption = q11Options[s].value;
+					break;
+				}
+			}
+
+			var q11Quiz = document.getElementById('q11');
+			var q11Image = document.querySelector("img[src='Q/11.png']");
+
+			var q12Options = document.getElementsByName('Q12');
+			var q12CorrectOption = 'D.';
+
+			var q12SelectedOption = '';
+			for (var t = 0; t < q12Options.length; t++) {
+				if (q12Options[t].checked) {
+					q12SelectedOption = q12Options[t].value;
+					break;
+				}
+			}
+
+			var q12Quiz = document.getElementById('q12');
+			var q12Image = document.querySelector("img[src='Q/12.png']");
+
+			var q13Options = document.getElementsByName('Q13');
+			var q13CorrectOption = 'B.';
+
+			var q13SelectedOption = '';
+			for (var u = 0; u < q13Options.length; u++) {
+				if (q13Options[u].checked) {
+					q13SelectedOption = q13Options[u].value;
+					break;
+				}
+			}
+
+			var q13Quiz = document.getElementById('q13');
+			var q13Image = document.querySelector("img[src='Q/13.png']");
+			
+			var q14Options = document.getElementsByName('Q14');
+			var q14CorrectOption = 'A.';
+
+			var q14SelectedOption = '';
+			for (var v = 0; v < q14Options.length; v++) {
+				if (q14Options[v].checked) {
+					q14SelectedOption = q14Options[v].value;
+					break;
+				}
+			}
+
+			var q14Quiz = document.getElementById('q14');
+			var q14Image = document.querySelector("img[src='Q/14.png']");
+
+
+			var q15Options = document.getElementsByName('Q15');
+			var q15CorrectOption = 'D.';
+
+			var q15SelectedOption = '';
+			for (var w = 0; w < q15Options.length; w++) {
+				if (q15Options[w].checked) {
+					q15SelectedOption = q15Options[w].value;
+					break;
+				}
+			}
+
+			var q15Quiz = document.getElementById('q15');
+			var q15Image = document.querySelector("img[src='Q/15.png']");
+
+			var fill1 = document.getElementById("sq1").value;
+			var fill2 = document.getElementById("sq2").value;
+			var fill3 = document.getElementById("sq3").value;
+			var fill4 = document.getElementById("sq4").value;
+			var fill5 = document.getElementById("sq5").value;
+		
+			var sscore=0;
+
+			if (q1SelectedOption === '') {
+            		unansweredQuestions.push('Question 1');
+        		}
+
+			if (q2SelectedOption === '') {
+            		unansweredQuestions.push('Question 2');
+        		}
+
+			if (q3SelectedOption === '') {
+            		unansweredQuestions.push('Question 3');
+        		}
+
+			if (q4SelectedOption === '') {
+            		unansweredQuestions.push('Question 4');
+        		}
+			
+			if (q5SelectedOption === '') {
+            		unansweredQuestions.push('Question 5');
+        		}
+
+			if (q6SelectedOption === '') {
+            		unansweredQuestions.push('Question 6');
+        		}
+
+			if (q7SelectedOption === '') {
+            		unansweredQuestions.push('Question 7');
+        		}
+
+			if (q8SelectedOption === '') {
+            		unansweredQuestions.push('Question 8');
+        		}
+
+			if (q9SelectedOption === '') {
+            		unansweredQuestions.push('Question 9');
+        		}
+
+			if (q10SelectedOption === '') {
+            		unansweredQuestions.push('Question 10');
+        		}
+
+			if (q11SelectedOption === '') {
+            		unansweredQuestions.push('Question 11');
+        		}
+
+			if (q12SelectedOption === '') {
+            		unansweredQuestions.push('Question 12');
+        		}
+
+			if (q13SelectedOption === '') {
+            		unansweredQuestions.push('Question 13');
+        		}
+
+			if (q14SelectedOption === '') {
+            		unansweredQuestions.push('Question 14');
+        		}
+
+			if (q15SelectedOption === '') {
+            		unansweredQuestions.push('Question 15');
+        		}
+
+			if (fill1 === "") {
+				unansweredQuestions.push('Sequence 1');
+			}
+			if (fill2 === "") {
+				unansweredQuestions.push('Sequence 2');
+			}
+			if (fill3 === "") {
+				unansweredQuestions.push('Sequence 3');
+			}
+			if (fill4 === "") {
+				unansweredQuestions.push('Sequence 4');
+			}
+			if (fill5 === "") {
+				unansweredQuestions.push('Sequence 5');	
+			}
+
+			
+			if (unansweredQuestions.length > 0) {
+            		alert('Please answer the following question(s): ' + unansweredQuestions.join(', '));
+            		return;
+        		}			
+
+			if (q1SelectedOption === q1CorrectOption) {
+				q1Image.style.borderColor = 'green'; // Set border color to green if the answer is correct
+    				score++;
+    				document.getElementById('result-container-q1').textContent = 'Correct! The answer is D.';
+			} else {
+    				q1Image.style.borderColor = 'red'; // Set border color to red if the answer is wrong
+    				document.getElementById('result-container-q1').textContent = 'Wrong! The correct answer is D.';
+			}
+
+			
+			if (q2SelectedOption === q2CorrectOption) {
+				q2Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q2').textContent = 'Correct! The answer is B.';
+			} else {
+				q2Image.style.borderColor = 'red';
+				document.getElementById('result-container-q2').textContent = 'Wrong! The correct answer is B.';
+			}
+
+			if (q3SelectedOption === q3CorrectOption) {
+				q3Image.style.borderColor = 'green';
+    				score++;
+    				document.getElementById('result-container-q3').textContent = 'Correct! The answer is C.';
+			} else {
+    				q3Image.style.borderColor = 'red'; 
+    				document.getElementById('result-container-q3').textContent = 'Wrong! The correct answer is C.';
+			}
+
+			if (q4SelectedOption === q4CorrectOption) {
+				q4Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q4').textContent = 'Correct! The answer is A.';
+			} else {
+				q4Image.style.borderColor = 'red';
+				document.getElementById('result-container-q4').textContent = 'Wrong! The correct answer is A.';
+			}
+
+			if (q5SelectedOption === q5CorrectOption) {
+				q5Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q5').textContent = 'Correct! The answer is D.';
+			} else {
+				q5Image.style.borderColor = 'red';
+				document.getElementById('result-container-q5').textContent = 'Wrong! The correct answer is D.';
+			}
+
+			if (q6SelectedOption === q6CorrectOption) {
+				q6Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q6').textContent = 'Correct! The answer is C.';
+			} else {
+				q6Image.style.borderColor = 'red';
+				document.getElementById('result-container-q6').textContent = 'Wrong! The correct answer is C.';
+			}
+
+			if (q7SelectedOption === q7CorrectOption) {
+				q7Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q7').textContent = 'Correct! The answer is B.';
+			} else {
+				q7Image.style.borderColor = 'red';
+				document.getElementById('result-container-q7').textContent = 'Wrong! The correct answer is B.';
+			}
+
+			if (q8SelectedOption === q8CorrectOption) {
+				q8Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q8').textContent = 'Correct! The answer is C.';
+			} else {
+				q8Image.style.borderColor = 'red';
+				document.getElementById('result-container-q8').textContent = 'Wrong! The correct answer is C.';
+			}
+
+			
+			if (q9SelectedOption === q9CorrectOption) {
+				q9Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q9').textContent = 'Correct! The answer is A.';
+			} else {
+				q9Image.style.borderColor = 'red';
+				document.getElementById('result-container-q9').textContent = 'Wrong! The correct answer is A.';
+			}
+
+			if (q10SelectedOption === q10CorrectOption) {
+				q10Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q10').textContent = 'Correct! The answer is C.';
+			} else {
+				q10Image.style.borderColor = 'red';
+				document.getElementById('result-container-q10').textContent = 'Wrong! The correct answer is C.';
+			}
+
+			if (q11SelectedOption === q11CorrectOption) {
+				q11Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q11').textContent = 'Correct! The answer is C.';
+			} else {
+				q11Image.style.borderColor = 'red';
+				document.getElementById('result-container-q11').textContent = 'Wrong! The correct answer is C.';
+			}
+
+			if (q12SelectedOption === q12CorrectOption) {
+				q12Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q12').textContent = 'Correct! The answer is D.';
+			} else {
+				q12Image.style.borderColor = 'red';
+				document.getElementById('result-container-q12').textContent = 'Wrong! The correct answer is D.';
+			}
+
+			if (q13SelectedOption === q13CorrectOption) {
+				q13Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q13').textContent = 'Correct! The answer is B.';
+			} else {
+				q13Image.style.borderColor = 'red';
+				document.getElementById('result-container-q13').textContent = 'Wrong! The correct answer is B.';
+			}
+
+			if (q14SelectedOption === q14CorrectOption) {
+				q14Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q14').textContent = 'Correct! The answer is A.';
+			} else {
+				q14Image.style.borderColor = 'red';
+				document.getElementById('result-container-q14').textContent = 'Wrong! The correct answer is A.';
+			}
+
+			if (q15SelectedOption === q15CorrectOption) {
+				q15Image.style.borderColor = 'green';
+				score++;
+				document.getElementById('result-container-q15').textContent = 'Correct! The answer is D.';
+			} else {
+				q15Image.style.borderColor = 'red';
+				document.getElementById('result-container-q15').textContent = 'Wrong! The correct answer is D.';
+			}
+				 
+			if (fill1 === "235") {
+				score++;
+				sscore++;
+				document.getElementById("sq1").style.borderColor = "#17B978";
+			}else{
+				document.getElementById("sq1").style.borderColor = "#C72C41";
+			}
+			if (fill2 === "325") {
+				score++;
+				sscore++;
+				document.getElementById("sq2").style.borderColor = "#17B978";
+			}else{
+				document.getElementById("sq2").style.borderColor = "#C72C41";
+			}
+			if (fill3 === "505") {
+				score++;
+				sscore++;
+				document.getElementById("sq3").style.borderColor = "#17B978";
+			}else{
+				document.getElementById("sq3").style.borderColor = "#C72C41";
+			}
+			if (fill4 === "775") {
+				score++;
+				sscore++;
+				document.getElementById("sq4").style.borderColor = "#17B978";
+			}else{
+				document.getElementById("sq4").style.borderColor = "#C72C41";
+			}
+			if (fill5 === "955") {
+				score++;
+				sscore++;
+				document.getElementById("sq5").style.borderColor = "#17B978";
+			}else{
+				document.getElementById("sq5").style.borderColor = "#C72C41";
+	
+			}
+
+						for (var a = 0; a < q1Options.length; a++) {
+                		q1Options[a].disabled = true;
+            	}
+
+            	for (var b = 0; b < q2Options.length; b++) {
+                		q2Options[b].disabled = true;
+            	}
+
+			for (var c = 0; c < q3Options.length; c++) {
+                		q3Options[c].disabled = true;
+            	}
+
+			for (var d = 0; d < q4Options.length; d++) {
+                		q4Options[d].disabled = true;
+            	}
+
+			for (var e = 0; e < q5Options.length; e++) {
+                		q5Options[e].disabled = true;
+            	}
+
+			for (var f = 0; f < q6Options.length; f++) {
+                		q6Options[f].disabled = true;
+            	}
+
+			for (var g = 0; g < q7Options.length; g++) {
+                		q7Options[g].disabled = true;
+            	}
+
+			for (var h = 0; h < q8Options.length; h++) {
+                		q8Options[h].disabled = true;
+            	}
+
+			for (var i = 0; i < q9Options.length; i++) {
+                		q9Options[i].disabled = true;
+            	}
+
+			for (var j = 0; j < q10Options.length; j++) {
+                		q10Options[j].disabled = true;
+            	}
+
+			for (var k = 0; k < q11Options.length; k++) {
+                		q11Options[k].disabled = true;
+            	}
+
+			for (var l = 0; l < q12Options.length; l++) {
+                		q12Options[l].disabled = true;
+            	}
+
+			for (var m = 0; m < q13Options.length; m++) {
+                		q13Options[m].disabled = true;
+            	}
+
+			for (var n = 0; n < q14Options.length; n++) {
+                		q14Options[n].disabled = true;
+            	}
+
+			for (var o = 0; o < q15Options.length; o++) {
+                		q15Options[o].disabled = true;
+            	}
+
+			document.getElementById('sq1').disabled = true;
+			document.getElementById('sq2').disabled = true;
+        		document.getElementById('sq3').disabled = true;
+        		document.getElementById('sq4').disabled = true;
+        		document.getElementById('sq5').disabled = true;
+
+
+			var scoreContainer = document.getElementById('score-container');
+			scoreContainer.textContent = 'Score: ' + score + '/20';
+			
+			var resultContainer = document.getElementById('result-container');
+			resultContainer.textContent = 'You got ' + sscore + ' answer(s) in the sequence correctly.';
+
+			var nextButton = document.getElementById('next-button');
+			nextButton.style.display = 'block';
+
+			var resetButton = document.getElementById('reset-button');
+			resetButton.style.display = 'block';
+
+			var submitButton = document.querySelector('button');
+			submitButton.style.display = 'none';
+
+		}
+
+		function resetForm() {
+			location.reload();
+		}
+
+	</script>
+</body>
+</html>
